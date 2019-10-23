@@ -1,7 +1,7 @@
-import { REQUEST_LOGIN,REQUEST_LOGIN_FAIL,REQUEST_LOGIN_SUCCESS } from "../actions/type";
+import { REQUEST_LOGIN, REQUEST_LOGIN_FAIL, REQUEST_LOGIN_SUCCESS } from "../actions/type";
 
 const initialState = {
-    data :{},
+    data: {},
     isLoading: false,
     error: null
 }
@@ -9,19 +9,24 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case REQUEST_LOGIN: {
-            return { ...state, isLoading: true }
+            return {
+                ...state,
+                isLoading: true
+            }
         }
         case REQUEST_LOGIN_SUCCESS: {
             return {
                 ...state,
                 isLoading: false,
                 error: null,
-                data : action.payload
+                data: action.payload
             }
         }
         case REQUEST_LOGIN_FAIL: {
             return {
-                ...state, error: "Lỗi mạng"
+                ...state,
+                isLoading : false,
+                error: "Lỗi mạng"
             }
         }
         default:

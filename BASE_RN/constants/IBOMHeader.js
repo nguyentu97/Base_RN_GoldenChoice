@@ -3,10 +3,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Header } from "react-native-elements";
 import NavigationUtil from "../navigation/NavigationUtil";
 import * as Icon from "@expo/vector-icons";
-import * as theme from "./Theme";
-import { SCREEN_ROUTER } from "./Constant";
+import * as theme from "../constants/Theme";
+import { SCREEN_ROUTER } from "../constants/Constant";
 
-export default class AppHeader extends Component {
+export default class IBOMHeader extends Component {
   render() {
     const title = this.props.title;
     const { back, search, ...props } = this.props;
