@@ -105,6 +105,11 @@ const fonts = {
         fontFamily: 'roboto-bold',
         fontSize: 49,
     },
+    regular12: {
+        fontFamily: 'roboto-regular',
+        fontSize: 12,
+        lineHeight: 17,
+    },
 
     regular14: {
         fontFamily: 'roboto-regular',

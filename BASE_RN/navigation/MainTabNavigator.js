@@ -19,6 +19,8 @@ import UserManualECScreen from '../screens/new_choice_ec/UserManualECScreen'
 import AttentionOCScreen from '../screens/new_choice_oc/AttentionOCScreen'
 import UserManualOCScreen from '../screens/new_choice_oc/UserManualOCScreen'
 import SettingAlarmScreen from '../screens/slide_menu/SettingAlarmScreen'
+import InviteFriendScreen from '../screens/slide_menu/InviteFriendScreen'
+import UpdateProfileScreen from '../screens/slide_menu/UpdateProfileScreen'
 
 
 
@@ -99,16 +101,18 @@ export default createStackNavigator({
     // screen:StartScreen
     // screen: IntroduceScreen
     // screen: Log_RegScreen
-    // screen: LoginScreen
+    screen: LoginScreen
     // screen: RegisterScreen
     // screen: RegisterComplete
     // screen: SelectUserScreen
     // screen: SelectMedicineScreen
     // screen: AttentionECScreen
     // screen: UserManualECScreen
-    screen: AttentionOCScreen
+    // screen: AttentionOCScreen
     // screen: UserManualOCScreen
     // screen: SettingAlarmScreen
+    // screen: InviteFriendScreen
+    // screen: UpdateProfileScreen
   }
 
 },
