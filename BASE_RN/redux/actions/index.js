@@ -2,11 +2,17 @@ import {
     REQUEST_LOGIN
 } from "./type";
 
-export const getUserInfo = (username, password) => ({
+export const requestLogin = (type, email, password) => ({
     type: REQUEST_LOGIN,
     payload: {
-        username: username,
-        password: password
+        type: type,
+        email: email,
+        password: password,
+        // device_id: device_id
     }
 })
+// export const requestLogin = (type) => ({
+//     type: REQUEST_LOGIN,
+//     payload: type
+// })
 

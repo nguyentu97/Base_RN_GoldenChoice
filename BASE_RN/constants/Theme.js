@@ -13,19 +13,25 @@ const colors = {
     inactive: 'gray',
     indicator: "#ff3b00",
     borderTopColor: "#dddd",
-
+    pink: "#DE3163",
+    pink1: "#F17DB1",
+    pink2: "#E55C9B",
     blue: '#2E5BFF',
     lightblue: 'rgba(46,92,255,0.2)',
     green: '#33AC2E',
     red: '#D63649',
     red1: '#941A08',
     yellow: '#F7C137',
+    orange: '#FCAA4F',
     teal: '#00C1D4',
     purple: '#8C54FF',
     black: '#2E384D',
     dark: '#000000',
-    black2: '#69707F',
-    black3: '#8798AD',
+    dark2: '#040505',
+    black2: '#676767',
+    black3: '#707070',
+    black4: '#5D5D5D',
+    black5: '#ECECEC',
     white: '#FFFFFF',
     gray: '#BFC5D2',
     gray2: '#F4F6FC',
@@ -119,7 +125,7 @@ const fonts = {
     light14: {
         fontFamily: 'roboto-light',
         fontSize: 14,
-        lineHeight: 17
+        lineHeight: 35
     },
     light18: {
         fontFamily: 'roboto-light',
@@ -151,6 +157,39 @@ const fonts = {
         fontSize: 15,
         lineHeight: 18
     },
+    oswaldlight25: {
+        fontFamily: 'oswald-light',
+        fontSize: 25,
+    },
+    quicksandbold9: {
+        fontFamily: 'quicksand-bold',
+        fontSize: 9,
+    },
+    quicksandbold10: {
+        fontFamily: 'quicksand-bold',
+        fontSize: 10,
+    },
+    quicksandbold12: {
+        fontFamily: 'quicksand-bold',
+        fontSize: 12,
+    },
+    quicksandbold15: {
+        fontFamily: 'quicksand-bold',
+        fontSize: 15,
+    },
+    quicksandbold16: {
+        fontFamily: 'quicksand-bold',
+        fontSize: 16,
+    },
+    quicksandlight: {
+        fontFamily: 'quicksand-regular',
+        fontSize: 12,
+    },
+    quicksandregular: {
+        fontFamily: 'quicksand-regular',
+        fontSize: 12,
+    },
+
 
 
 

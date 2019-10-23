@@ -1,11 +1,25 @@
 import React from 'react';
 import { Platform, Text } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator, createAppContainer, BottomTabBar } from 'react-navigation-tabs';
+import { createStackNavigator, createBottomTabNavigator, createAppContainer, BottomTabBar } from 'react-navigation';
 import * as Icon from '@expo/vector-icons'
 import HomeScreen from '../screens/HomeScreen';
+import StartScreen from '../screens/StartScreen'
 import * as theme from '../constants/Theme'
 import I18n from '../i18n/i18n'
 import NotificationScreen from '../screens/notifications/NotificationScreen';
+import IntroduceScreen from '../screens/auth/IntroduceScreen'
+import Log_RegScreen from '../screens/auth/Log_RegScreen'
+import LoginScreen from '../screens/auth/LoginScreen'
+import RegisterScreen from '../screens/auth/RegisterScreen'
+import RegisterComplete from '../screens/auth/RegisterComplete'
+import SelectUserScreen from '../screens/auth/SelectUserScreen'
+import SelectMedicineScreen from '../screens/auth/SelectMedicineScreen'
+import AttentionECScreen from '../screens/new_choice_ec/AttentionECScreen'
+import UserManualECScreen from '../screens/new_choice_ec/UserManualECScreen'
+import AttentionOCScreen from '../screens/new_choice_oc/AttentionOCScreen'
+import UserManualOCScreen from '../screens/new_choice_oc/UserManualOCScreen'
+import SettingAlarmScreen from '../screens/slide_menu/SettingAlarmScreen'
+
 
 
 const TabBarComponent = (props) => (<BottomTabBar {...props} />);
@@ -75,14 +89,28 @@ const bottomBar = createBottomTabNavigator({
     },
 
   },
-
 )
 
 export default createStackNavigator({
 
   main: {
-    screen: bottomBar
+    // screen: bottomBar
+    // screen: HomeScreen
+    // screen:StartScreen
+    // screen: IntroduceScreen
+    // screen: Log_RegScreen
+    // screen: LoginScreen
+    // screen: RegisterScreen
+    // screen: RegisterComplete
+    // screen: SelectUserScreen
+    // screen: SelectMedicineScreen
+    // screen: AttentionECScreen
+    // screen: UserManualECScreen
+    screen: AttentionOCScreen
+    // screen: UserManualOCScreen
+    // screen: SettingAlarmScreen
   }
+
 },
   {
     defaultNavigationOptions: {

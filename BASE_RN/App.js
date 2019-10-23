@@ -7,9 +7,10 @@ import { Asset } from 'expo-asset'
 import AppNavigator from './navigation/AppNavigator';
 import NavigationUtil from './navigation/NavigationUtil'
 import { Provider } from "react-redux";
-import store from './redux/store'
+import store from "./redux/store";
+export default class App extends React.Component {
 
-export default class App extends Component {
+
   if(__DEV__) {
     import("./ReactotronConfig").then(() => console.log("Reactotron Configured"));
   }
@@ -19,6 +20,7 @@ export default class App extends Component {
   };
 
   render() {
+    console.disableYellowBox = true
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
@@ -49,7 +51,11 @@ export default class App extends Component {
         "roboto-bold": require("./assets/fonts/Roboto-Bold.ttf"),
         "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf"),
         "roboto-medium": require("./assets/fonts/Roboto-Medium.ttf"),
-        "roboto-light-italic": require("./assets/fonts/Roboto-LightItalic.ttf")
+        "roboto-light-italic": require("./assets/fonts/Roboto-LightItalic.ttf"),
+        "oswald-light": require("./assets/fonts/Oswald-Regular.ttf"),
+        "quicksand-bold": require("./assets/fonts/Quicksand-Bold.ttf"),
+        "quicksand-light": require("./assets/fonts/Quicksand-Light.ttf"),
+        "quicksand-regular": require("./assets/fonts/Quicksand-Regular.ttf")
       })
     ]);
   };
@@ -62,6 +68,7 @@ export default class App extends Component {
     this.setState({ isLoadingComplete: true });
   };
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -1,10 +1,10 @@
 import axios from 'axios'
-
+import { AsyncStorage, Alert } from 'react-native';
 // singleton  network client
 function createAxios() {
     // AsyncStorage.setItem("token", '2323226DADAD') //full
     var axiosInstant = axios.create();
-    axiosInstant.defaults.baseURL = "http://winds.hopto.org:8463/";
+    axiosInstant.defaults.baseURL = "http://newchoice.winds.vn/public/api/";
     axiosInstant.defaults.timeout = 20000;
     axiosInstant.defaults.headers = { 'Content-Type': 'application/json' }
 
@@ -33,8 +33,6 @@ function createAxios() {
             setTimeout(() => {
                 Alert.alert("Thông báo", response.data.message)
             }, 100);
-
-
         }
         return response
     })
@@ -57,10 +55,5 @@ function handleResult(api) {
 
 // Application api request
 export const requestLogin = (payload) => {
-    return handleResult(getAxios.post(
-        "api/Service/LoginApp", {
-            "value": payload.value,
-            "type": payload.type
-        }
-    ))
+    return handleResult(getAxios.post("Login", payload))
 }
