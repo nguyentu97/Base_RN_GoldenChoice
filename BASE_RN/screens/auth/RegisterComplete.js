@@ -23,7 +23,7 @@ export default class RegisterComplete extends Component {
             <ImageBackground style={{ flex: 1, alignItems: "center" }} source={require('../../assets/images/img_bg_newchoice.png')} >
                 <Image style={styles._logo} source={require('../../assets/images/img_logo2.png')} />
                 <KeyboardAvoidingView behavior="padding" enabled >
-                    <ScrollView contentContainerStyle={{ marginTop: 15, borderRadius: 15 }}>
+                    <ScrollView contentContainerStyle={{marginTop: 15}}>
                         <View style={styles._viewRoot}>
                             <Text
                                 style={[Theme.fonts.oswaldlight25, {
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         width: 143,
         height: 40,
         resizeMode: "contain",
-        marginTop: 21
+        marginTop: 25
     },
     _addImage: {
         width: 64,
@@ -131,7 +131,8 @@ const styles = StyleSheet.create({
 
     },
     _viewRoot: {
-        flex: 1,
+        // flex: 1,
+        width: 380,
         backgroundColor: Theme.colors.white,
         paddingHorizontal: 20,
         borderRadius: 15,
@@ -164,6 +165,7 @@ const styles = StyleSheet.create({
         width: 300,
         height: 50,
         marginTop: 15,
+        marginBottom: 27,
         backgroundColor: Theme.colors.pink1,
         borderRadius: 25,
         justifyContent: "center",

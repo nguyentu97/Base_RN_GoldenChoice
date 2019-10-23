@@ -11,16 +11,13 @@ export default class SettingAlarmScreen extends Component {
                 flex: 1,
             }}>
                 <View style={{
-                    marginTop: 10,
                     width: 414,
                     height: 86,
                     alignItems: "center",
-                    flexDirection: "row",
+                    justifyContent: "center"
                 }}>
                     <Text style={[Theme.fonts.oswaldlight25, {
-                        flex: 1,
                         color: Theme.colors.black4,
-                        textAlign: "center"
                     }]}>{I18n.t('setting_alarm')}</Text>
                     <TouchableOpacity
                         style={{
@@ -36,8 +33,8 @@ export default class SettingAlarmScreen extends Component {
                         }}
                     >
                         <Image style={{
-                            width: 20,
-                            height: 15,
+                            width: 17,
+                            height: 12,
                             resizeMode: "contain"
                         }}
                             source={require('../../assets/images/img_select.png')} />

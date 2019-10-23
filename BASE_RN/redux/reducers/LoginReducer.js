@@ -25,8 +25,9 @@ export default function (state = initialState, action) {
         case REQUEST_LOGIN_FAIL: {
             return {
                 ...state,
-                isLoading : false,
-                error: "Lỗi mạng"
+                isLoading: false,
+                error: "Lỗi mạng",
+                data: action.payload
             }
         }
         default:
