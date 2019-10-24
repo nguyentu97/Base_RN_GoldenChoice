@@ -20,7 +20,7 @@ export function* requestLogin(action) {
         yield put({ type: REQUEST_LOGIN_SUCCESS, payload: response.data })
         NavigationUtil.navigate(SCREEN_ROUTER.SELECT_USER)
     } catch (err) {
-        reactotron.log("err",err) 
+        reactotron.log("err", err)
         yield put({ type: REQUEST_LOGIN_FAIL, payload: err })
     }
 }

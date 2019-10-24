@@ -21,6 +21,7 @@ import UserManualOCScreen from '../screens/new_choice_oc/UserManualOCScreen'
 import SettingAlarmScreen from '../screens/slide_menu/SettingAlarmScreen'
 import InviteFriendScreen from '../screens/slide_menu/InviteFriendScreen'
 import UpdateProfileScreen from '../screens/slide_menu/UpdateProfileScreen'
+import LuckyWheelScreen from '../screens/slide_menu//LuckyWheelScreen'
 
 
 
@@ -86,7 +87,7 @@ const bottomBar = createBottomTabNavigator({
           borderTopColor: theme.colors.primary,
           backgroundColor: theme.colors.bottombarBg,
           height: 58
-        }}
+        }} 
       />
     },
 
@@ -101,8 +102,8 @@ export default createStackNavigator({
     // screen:StartScreen
     // screen: IntroduceScreen
     // screen: Log_RegScreen
-    screen: LoginScreen
-    // screen: RegisterScreen
+    // screen: LoginScreen
+    screen: RegisterScreen
     // screen: RegisterComplete
     // screen: SelectUserScreen
     // screen: SelectMedicineScreen
@@ -113,8 +114,8 @@ export default createStackNavigator({
     // screen: SettingAlarmScreen
     // screen: InviteFriendScreen
     // screen: UpdateProfileScreen
+    // screen: LuckyWheelScreen
   }
-
 },
   {
     defaultNavigationOptions: {

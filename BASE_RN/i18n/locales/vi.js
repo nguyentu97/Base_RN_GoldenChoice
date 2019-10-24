@@ -90,9 +90,11 @@ export default {
     setting_alarm: "CÀI ĐẶT CHẾ ĐỘ NHẮC",
     on_off: "BẬT/TẮT CHẾ ĐỘ NHẮC",
     custom_alarm: "TÙY CHỈNH NHẮC LẠI - SNOOZE\n (Nhắc lại trong khoảng thời gian)",
-    timezone: "TIMEZONE",
+    timezone: "THỜI GIAN NHẮC",
     select_sound: "CHỌN ÂM THANH",
-    select_reminder: "CHỌN LỜI NHẮC"
+    select_reminder: "CHỌN LỜI NHẮC",
+    thank_select: "Cám ơn bạn đã lựa chọn!",
+    rings_again:"XIN HÃY NHẪN NẠI\nvà trả lời một số câu hỏi của chúng tôi\nđể kiểm tra thông tin, tình trạng uống thuốc\nhiện tại của bạn. Hệ thống sẽ tính toán\nđể đưa ra thời điểm nhắc bạn tốt nhất và\nhiệu quả nhất!",
 
 
 

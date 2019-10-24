@@ -10,7 +10,32 @@ export default class AttentionOCScreen extends Component {
     state = {
         onClick: 0
     }
-
+    _renderMobilize() {
+        return (
+            <View style={styles._viewContext}>
+                <Text style={[Theme.fonts.bold15, {
+                    textAlign: "center",
+                    color: Theme.colors.black2,
+                    marginTop: 37
+                }]}>{I18n.t('thank_select')}</Text>
+                <Image
+                    style={styles._imgflower}
+                    source={require('../../assets/images/img_flower.png')} />
+                <Text style={[Theme.fonts.bold12, { color: Theme.colors.pink, textAlign: "center", marginTop: 19 }]}>{I18n.t('rings_again')}</Text>
+                <TouchableOpacity
+                    style={[styles._buttom, { marginTop: 20, marginBottom: 50 }]}
+                    onPress={() => {
+                        this.setState({
+                            onClick: 8
+                        })
+                    }}>
+                    <Text style={[Theme.fonts.bold15, styles._textButton, { textAlign: "center" }]}>
+                        {I18n.t('not_drink')}
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        )
+    }
     _renderNote() {
         return (
             <View style={styles._viewContext}>
@@ -264,17 +289,19 @@ export default class AttentionOCScreen extends Component {
                 style={{
                     flex: 1,
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
                 }}
                 source={require('../../assets/images/img_bg_newchoice.png')}>
                 <View style={{
-                    alignItems: "center"
+                    alignItems: "center",
+                    paddingTop: this.state.onClick == 0 ? 100 : 0
                 }}>
-                    <Image
+                    {this.state.onClick != 0 && <Image
                         style={styles._logo}
-                        source={require('../../assets/images/img_logo1.png')} />
+                        source={require('../../assets/images/img_logo1.png')} />}
                     <View style={styles._viewRoot}>
-                        {this.state.onClick === 0 && this._renderNote()}
+                        {this.state.onClick === 0 && this._renderMobilize()}
+                        {this.state.onClick === 8 && this._renderNote()}
                         {this.state.onClick === 1 && this._renderCheckStatus()}
                         {this.state.onClick === 4 && this._renderUse()}
                         {this.state.onClick === 2 && this._renderNotUse()}
@@ -285,7 +312,7 @@ export default class AttentionOCScreen extends Component {
                     </View>
                 </View>
                 <View style={{
-                    marginTop: this.state.onClick === 0 ? 35 : this.state.onClick === 1 ? 85 : this.state.onClick === 2 || this.state.onClick == 4 || this.state.onClick == 3 ? 58 : 83,
+                    marginTop: this.state.onClick === 0 ? 35 : this.state.onClick === 1 ? 85 : this.state.onClick === 2 || this.state.onClick == 4 || this.state.onClick == 3 ? 58 : this.state.onClick == 8 ? 50 : 83,
                     justifyContent: "center",
                     alignItems: this.state.onClick === 0 ? "flex-start" : this.state.onClick === 1 || this.state.onClick === 2 || this.state.onClick == 6 || this.state.onClick == 4 ? "center" : "flex-end"
                 }}>
@@ -310,7 +337,7 @@ export default class AttentionOCScreen extends Component {
 const styles = StyleSheet.create({
     _viewRoot:
     {
-        width: 340,
+        width: 380,
         marginTop: 18,
         backgroundColor: Theme.colors.white,
         paddingHorizontal: 30,
@@ -353,6 +380,12 @@ const styles = StyleSheet.create({
         width: 33,
         height: 28,
         resizeMode: "contain"
+    },
+    _imgflower: {
+        width: 154,
+        height: 113,
+        marginTop: 20,
+        resizeMode: "contain",
     },
     _imgDrank: {
         width: 110,

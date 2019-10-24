@@ -1,12 +1,12 @@
 import { REQUEST_LOGIN, REQUEST_LOGIN_FAIL, REQUEST_LOGIN_SUCCESS } from "../actions/type";
 
 const initialState = {
-    data: {},
+    data: "",
     isLoading: false,
     error: null
 }
 
-export default function (state = initialState, action) {
+export default function (state = initialState, action) {  
     switch (action.type) {
         case REQUEST_LOGIN: {
             return {

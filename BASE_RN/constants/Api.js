@@ -31,7 +31,7 @@ function createAxios() {
             })
         } else if (response.data && response.data.status != 1) {
             setTimeout(() => {
-                Alert.alert("Thông báo", response.data.message)
+                // Alert.alert("Thông báo", response.data.message) 
             }, 100);
         }
         return response
@@ -46,7 +46,7 @@ function handleResult(api) {
     return api.then(res => {
         if (res.data.status != 1) {
             console.log("Status != 1\n")
-            return Promise.reject(new Error("Co loi xay ra"))
+            return Promise.reject(res.data.message)
         }
         console.log("RequestSuccess\n")
         return Promise.resolve(res.data)
