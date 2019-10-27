@@ -25,14 +25,14 @@ export default class Log_RegScreen extends Component {
                         onPress={() => {
                             NavigationUtil.navigate(SCREEN_ROUTER.LOGIN)
                         }}>
-                        <Text style={[Theme.fonts.bold15, { color: "#707070" }]}>{I18n.t('login')}</Text>
+                        <Text style={[Theme.fonts.bold15, { color: Theme.colors.black3 }]}>{I18n.t('login')}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={[styles._button, { marginTop: 15 }]}
                         onPress={() => {
                             NavigationUtil.navigate(SCREEN_ROUTER.REGISTER)
                         }}>
-                        <Text style={[Theme.fonts.bold15, { color: "#707070" }]}>{I18n.t('register')}</Text>
+                        <Text style={[Theme.fonts.bold15, { color: Theme.colors.black3 }]}>{I18n.t('register')}</Text>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={[styles._button, {
