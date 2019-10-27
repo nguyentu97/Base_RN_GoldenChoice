@@ -32,7 +32,7 @@ export function* requestRegister(action) {
         reactotron.log("response", response)
         yield call(AsyncStorage.setItem, "token", response.data.token);
         yield put({ type: REQUEST_REGISTER_SUCCESS, payload: response.data })
-        // NavigationUtil.navigate(SCREEN_ROUTER.SELECT_USER)
+        NavigationUtil.navigate(SCREEN_ROUTER.REGISTERCOMPLETE)
     } catch (err) {
         reactotron.log("err", err)
         yield put({ type: REQUEST_REGISTER_FAIL, payload: err })
