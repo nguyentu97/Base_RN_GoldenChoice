@@ -1,5 +1,6 @@
 import {
-    REQUEST_LOGIN
+    REQUEST_LOGIN,
+    REQUEST_REGISTER
 } from "./type";
 
 export const requestLogin = (type, email, password) => ({
@@ -11,8 +12,12 @@ export const requestLogin = (type, email, password) => ({
         // device_id: device_id
     }
 })
-// export const requestLogin = (type) => ({
-//     type: REQUEST_LOGIN,
-//     payload: type
-// })
+export const requestRegister = (email, password) => ({
+    type: REQUEST_REGISTER,
+    payload: {
+        email: email,
+        password: password,
+    }
+})
+
 

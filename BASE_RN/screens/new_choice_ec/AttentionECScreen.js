@@ -3,11 +3,11 @@ import { Text, StyleSheet, View, Image, TouchableOpacity, ImageBackground } from
 import * as Theme from '../../constants/Theme'
 import I18n from '../../i18n/i18n'
 import NavigationUtil from '../../navigation/NavigationUtil'
-import { SCREEN_ROUTER } from '../../constants/Constant'
+import { SCREEN_ROUTER, CHECK_NEWCHOICE_EC } from '../../constants/Constant'
 
 export default class AttentionScreen extends Component {
     state = {
-        onClick: 0
+        selectedPosition: CHECK_NEWCHOICE_EC.MOBILIZE
     }
     _renderMobilize() {
         return (
@@ -25,7 +25,7 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 20, marginBottom: 50 }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 6
+                            selectedPosition: CHECK_NEWCHOICE_EC.NOTE
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton, { textAlign: "center" }]}>
@@ -66,7 +66,7 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 30, marginBottom: 30 }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 1
+                            selectedPosition: CHECK_NEWCHOICE_EC.CHECK_STATUS
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton, { textAlign: "center" }]}>
@@ -88,7 +88,7 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 24 }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 4
+                            selectedPosition: CHECK_NEWCHOICE_EC.DRANK
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton, { textAlign: "center" }]}>{I18n.t('drink_one')}</Text>
@@ -97,7 +97,7 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 15, marginBottom: 58 }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 2
+                            selectedPosition: CHECK_NEWCHOICE_EC.NOT_DRANK
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton, { textAlign: "center" }]}>
@@ -135,7 +135,7 @@ export default class AttentionScreen extends Component {
                     }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 3
+                            selectedPosition: CHECK_NEWCHOICE_EC.SET_TIME
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton]}>{I18n.t('ok')}</Text>
@@ -157,7 +157,7 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 28, marginBottom: 41 }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 3
+                            selectedPosition: CHECK_NEWCHOICE_EC.SET_TIME
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton]}>{I18n.t('drank')}</Text>
@@ -165,7 +165,7 @@ export default class AttentionScreen extends Component {
             </View>)
 
     }
-    _renderTimerDone() {
+    _renderSetTime() {
         return (
             <View style={styles._viewContext}>
                 <Text style={[Theme.fonts.bold16, styles._colorText, {
@@ -179,7 +179,7 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 38, marginBottom: 30 }]}
                     onPress={() => {
                         this.setState({
-                            onClick: 5
+                            selectedPosition: CHECK_NEWCHOICE_EC.SET_REMINDER
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton]}>{I18n.t('ok')}</Text>
@@ -187,7 +187,7 @@ export default class AttentionScreen extends Component {
             </View>
         )
     }
-    _renderSetAlarm() {
+    _renderSetReminder() {
         return (
             <View style={styles._viewContext}>
                 <Text style={[Theme.fonts.bold16, {
@@ -206,13 +206,61 @@ export default class AttentionScreen extends Component {
                     style={[styles._buttom, { marginTop: 15, marginBottom: 33 }]}
                     onPress={() => {
                         this.setState({
-                            // onClick: 2
+                            // selectedPosition: 2
                         })
                     }}>
                     <Text style={[Theme.fonts.bold15, styles._textButton, { textAlign: "center" }]}>{I18n.t('default_option')}</Text>
                 </TouchableOpacity>
             </View>
         )
+    }
+
+    renderSelectedPosition = (position) => {
+        switch (position) {
+            case CHECK_NEWCHOICE_EC.MOBILIZE: {
+                return (
+                    this._renderMobilize()
+                )
+                break
+            }
+            case CHECK_NEWCHOICE_EC.NOTE: {
+                return (
+                    this._renderNote()
+                )
+                break
+            }
+            case CHECK_NEWCHOICE_EC.CHECK_STATUS: {
+                return (
+                    this._renderCheckStaus()
+                )
+                break
+            }
+            case CHECK_NEWCHOICE_EC.DRANK: {
+                return (
+                    this._renderDrink()
+                )
+                break
+            }
+            case CHECK_NEWCHOICE_EC.NOT_DRANK: {
+                return (
+                    this._renderNotDrink()
+                )
+                break
+            }
+            case CHECK_NEWCHOICE_EC.SET_TIME: {
+                return (
+                    this._renderSetTime()
+                )
+                break
+
+            }
+            case CHECK_NEWCHOICE_EC.SET_REMINDER: {
+                return (
+                    this._renderSetReminder()
+                )
+                break
+            }
+        }
     }
     render() {
         return (
@@ -225,25 +273,22 @@ export default class AttentionScreen extends Component {
                 source={require('../../assets/images/img_bg_newchoice.png')}>
                 <View style={{
                     alignItems: "center",
-                    paddingTop: this.state.onClick == 0 ? 100 : 0
+                    paddingTop: this.state.selectedPosition == CHECK_NEWCHOICE_EC.MOBILIZE ? 100 : 0
                 }}>
-                    {this.state.onClick != 0 && <Image
+                    {this.state.selectedPosition != CHECK_NEWCHOICE_EC.MOBILIZE && <Image
                         style={styles._logo}
                         source={require('../../assets/images/img_logo1.png')} />}
                     <View style={styles._viewRoot}>
-                        {this.state.onClick == 0 && this._renderMobilize()}
-                        {this.state.onClick == 6 && this._renderNote()}
-                        {this.state.onClick === 1 && this._renderCheckStaus()}
-                        {this.state.onClick === 4 && this._renderDrink()}
-                        {this.state.onClick === 2 && this._renderNotDrink()}
-                        {this.state.onClick === 3 && this._renderTimerDone()}
-                        {this.state.onClick === 5 && this._renderSetAlarm()}
+                        {this.renderSelectedPosition(this.state.selectedPosition)}
                     </View>
                 </View>
                 <View style={{
-                    marginTop: this.state.onClick === 0 ? 50 : this.state.onClick === 1 ? 85 : this.state.onClick === 2 || this.state.onClick == 4 || this.state.onClick == 3 ? 58 : this.state.onClick == 6 ? 50 : 83,
+                    marginTop: this.state.selectedPosition === CHECK_NEWCHOICE_EC.MOBILIZE ? 50 : this.state.selectedPosition === CHECK_NEWCHOICE_EC.NOTE ? 31 : this.state.selectedPosition === CHECK_NEWCHOICE_EC.CHECK_STATUS || this.state.selectedPosition == CHECK_NEWCHOICE_EC.SET_TIME || this.state.selectedPosition == CHECK_NEWCHOICE_EC.DRANK || this.state.selectedPosition == CHECK_NEWCHOICE_EC.NOT_DRANK ? 58 : this.state.selectedPosition == CHECK_NEWCHOICE_EC.SET_REMINDER ? 50 : 86,
                     justifyContent: "center",
-                    alignItems: this.state.onClick === 0 ? "flex-start" : this.state.onClick === 1 || this.state.onClick === 2 || this.state.onClick == 4 ? "center" : "flex-end"
+                    alignItems: this.state.selectedPosition === CHECK_NEWCHOICE_EC.MOBILIZE || 
+                    this.state.selectedPosition === CHECK_NEWCHOICE_EC.NOTE ? "flex-start" : this.state.selectedPosition === CHECK_NEWCHOICE_EC.DRANK || 
+                    this.state.selectedPosition == CHECK_NEWCHOICE_EC.CHECK_STATUS || 
+                    this.state.selectedPosition == CHECK_NEWCHOICE_EC.NOT_DRANK ? "center" : "flex-end"
                 }}>
                     <View style={{
                         height: 2,

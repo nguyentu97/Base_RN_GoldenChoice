@@ -22,8 +22,10 @@ export default class RegisterComplete extends Component {
         return (
             <ImageBackground style={{ flex: 1, alignItems: "center" }} source={require('../../assets/images/img_bg_newchoice.png')} >
                 <Image style={styles._logo} source={require('../../assets/images/img_logo2.png')} />
-                <KeyboardAvoidingView behavior="padding" enabled >
-                    <ScrollView contentContainerStyle={{marginTop: 15}}>
+                <KeyboardAvoidingView behavior="padding" enabled style={{
+                    backgroundColor: "red"
+                }}>
+                    <ScrollView contentContainerStyle={{ marginTop: 15 }}>
                         <View style={styles._viewRoot}>
                             <Text
                                 style={[Theme.fonts.oswaldlight25, {

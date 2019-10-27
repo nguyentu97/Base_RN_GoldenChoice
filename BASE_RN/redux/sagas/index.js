@@ -1,8 +1,10 @@
-import { 
-    watchLogin
+import {
+    watchLogin,
+    watchRegister
 } from './NetworkSaga'
 
 
 export default function* rootSaga() {
-    yield watchLogin
+    yield watchLogin,
+    yield watchRegister
 }

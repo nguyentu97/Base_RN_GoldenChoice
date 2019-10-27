@@ -17,7 +17,6 @@ const store = createStore(
         applyMiddleware(sagaMiddleware),
         Reactotron.createEnhancer()
     )
-
 );
 sagaMiddleware.run(rootSaga);
 

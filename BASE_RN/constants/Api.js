@@ -31,7 +31,7 @@ function createAxios() {
             })
         } else if (response.data && response.data.status != 1) {
             setTimeout(() => {
-                // Alert.alert("Thông báo", response.data.message) 
+                Alert.alert("Thông báo", response.data.message) 
             }, 100);
         }
         return response
@@ -56,4 +56,7 @@ function handleResult(api) {
 // Application api request
 export const requestLogin = (payload) => {
     return handleResult(getAxios.post("Login", payload))
+}
+export const requestRegister = (payload) => { 
+    return handleResult(getAxios.post("createUser", payload))
 }

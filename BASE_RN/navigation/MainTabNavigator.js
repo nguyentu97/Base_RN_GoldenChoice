@@ -112,7 +112,7 @@ export default createStackNavigator({
     // screen: AttentionOCScreen
     // screen: UserManualOCScreen
     // screen: SettingAlarmScreen
-    // screen: InviteFriendScreen
+    // screen: InviteFriendScreen 
     // screen: UpdateProfileScreen
     // screen: LuckyWheelScreen
   }
