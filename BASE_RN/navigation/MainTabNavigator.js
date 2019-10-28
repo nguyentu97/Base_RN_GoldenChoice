@@ -100,10 +100,10 @@ export default createStackNavigator({
     // screen: bottomBar
     // screen: HomeScreen
     // screen:StartScreen
-    // screen: IntroduceScreen
+    screen: IntroduceScreen
     // screen: Log_RegScreen
     // screen: LoginScreen
-    screen: RegisterScreen
+    // screen: RegisterScreen
     // screen: RegisterComplete
     // screen: SelectUserScreen
     // screen: SelectMedicineScreen

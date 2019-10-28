@@ -43,7 +43,7 @@ class RegisterScreen extends Component {
                     backgroundColor:'red'
                 }}> */}
                 <Image style={styles._logo} source={require('../../assets/images/img_logo2.png')} />
-                <Text style={[Theme.fonts.oswaldlight25, styles._textLogin]}>{I18n.t('register')}</Text>
+                <Text style={[Theme.fonts.oswaldlight25, styles._textRegister]}>{I18n.t('register')}</Text>
                 <Text style={[Theme.fonts.quicksandbold15, { marginTop: 24, color: Theme.colors.white }]}>{I18n.t('email_exists')}</Text>
                 <KeyboardAvoidingView
                     style={{
@@ -132,7 +132,7 @@ class RegisterScreen extends Component {
                     // marginTop: 30,
                     alignItems: "center"
                 }}>
-                    <Text style={[Theme.fonts.quicksandbold12, { color: Theme.colors.white }]}>{I18n.t('have_account')} </Text>
+                    <Text style={[Theme.fonts.quicksandbold12, { color: Theme.colors.white }]}>{I18n.t('c')} </Text>
                     <TouchableOpacity onPress={() => {
                         NavigationUtil.navigate(SCREEN_ROUTER.LOGIN)
                     }}>
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
     },
-    _textLogin: {
+    _textRegister: {
         marginTop: 10,
         textAlign: "center",
         color: Theme.colors.white,

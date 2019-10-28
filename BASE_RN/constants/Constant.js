@@ -28,6 +28,15 @@ const CHECK_NEWCHOICE_EC = {
     SET_TIME: 5,
     SET_REMINDER: 6
 }
+const CHECK_NEWCHOICE_OC = {
+    MOBILIZE: 0,
+    NOTE: 1,
+    CHECK_STATUS: 2,
+    DRANK: 3,
+    NOT_DRANK: 4,
+    SET_TIME: 5,
+    SET_REMINDER: 6
+}
 
 export {
     SCREEN_ROUTER,CHECK_NEWCHOICE_EC

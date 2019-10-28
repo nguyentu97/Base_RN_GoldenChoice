@@ -6,4 +6,4 @@ export const REQUEST_LOGIN_FAIL = 'goldenchoice/login_fail';
 //register
 export const REQUEST_REGISTER = 'goldenchoice/register';
 export const REQUEST_REGISTER_SUCCESS = 'goldenchoice/register_success';
-export const REQUEST_REGISTER_FAIL = 'goldenchoice/registerregister_fail';
+export const REQUEST_REGISTER_FAIL = 'goldenchoice/register_fail';
