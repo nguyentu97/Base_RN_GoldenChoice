@@ -34,7 +34,6 @@ export class LoginScreen extends Component {
     login() {
         if (this.state.email.trim().length == 0 || this.state.password.trim().length == 0) {    
             showMessages(I18n.t('notification'), I18n.t('empty_value'))
-            // <Text style={[Theme.fonts.bold15, { marginTop: 21, color: Theme.colors.white, marginBottom: 5 }]}>{I18n.t('notification')}</Text>
             return;
         }
         else {
@@ -60,7 +59,8 @@ export class LoginScreen extends Component {
                 }}>
                     <Image style={styles._logo} source={require('../../assets/images/img_logo2.png')} />
                     <Text style={[Theme.fonts.oswaldlight25, styles._textLogin]}>{I18n.t('login')}</Text>
-                    {loginState.data != null && <Text style={[Theme.fonts.bold15, { marginTop: 21, color: Theme.colors.white, marginBottom: 5 }]}>{loginState.data + ""}</Text>}
+                    {loginState.data != null && 
+                    <Text style={[Theme.fonts.bold15, { marginTop: 21, color: Theme.colors.white, marginBottom: 5 }]}>{loginState.data + ""}</Text>}
                     <View style={styles._container}>
                         <View style={[styles._viewTextInput, { marginTop: 36 }]}>
                             <Image
