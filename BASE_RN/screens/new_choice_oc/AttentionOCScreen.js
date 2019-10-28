@@ -283,6 +283,7 @@ export default class AttentionOCScreen extends Component {
             </View>
         )
     }
+    
     render() {
         return (
             <ImageBackground
