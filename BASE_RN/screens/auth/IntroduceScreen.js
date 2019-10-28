@@ -4,8 +4,22 @@ import * as Theme from '../../constants/Theme'
 import NavigationUtil from '../../navigation/NavigationUtil'
 import { SCREEN_ROUTER } from '../../constants/Constant'
 import I18n from '../../i18n/i18n'
+import CountDown from 'react-native-countdown-component';
 
 export default class IntroduceScreen extends Component {
+    // _countDown = () => {
+    //     return (
+    //         <CountDown
+    //             until={100}
+    //             size={20}
+    //             onFinish={() => alert('Finished')}
+    //             digitStyle={{ backgroundColor: "null" }}
+    //             digitTxtStyle={{ color: 'red' }}
+    //             timeToShow={['S']}
+    //             timeLabels={{ s: '' }}
+    //         />
+    //     )
+    // }
     render() {
         return (
             <ImageBackground style={styles._bg} source={require('../../assets/images/img_bg_newchoice.png')}>
@@ -47,7 +61,6 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
     },
     _button: {
-        // marginTop: 50,
         width: 300,
         height: 50,
         position: "absolute",
